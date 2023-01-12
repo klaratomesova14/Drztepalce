@@ -1,0 +1,30 @@
+@use "mixins";
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+      @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #353434;
+  color: #353434;
+  margin: 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 15px auto 15px;
+    grid-template-rows: 10px auto auto auto;
+    background-color: #fafafa;
+
+  @include desktop {
+    grid-template-columns: auto 86% auto;
+    grid-template-rows: 30px auto auto auto;
+    
+  }
+}

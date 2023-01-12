@@ -1,0 +1,499 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #353434;
+  color: #353434;
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 15px auto 15px;
+  grid-template-rows: 10px auto auto auto;
+  background-color: #fafafa;
+}
+@media screen and (min-width: 1024px) {
+  .layout {
+    grid-template-columns: auto 86% auto;
+    grid-template-rows: 30px auto auto auto;
+  }
+}
+
+.top {
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  background-color: #353434;
+}
+
+.header {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 25px auto;
+  grid-template-rows: auto 250px;
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    grid-template-rows: auto 560px;
+  }
+}
+
+.menu {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    justify-self: end;
+    align-self: stretch;
+  }
+}
+.menu__item {
+  color: #353434;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0;
+  display: inline-block;
+  position: relative;
+}
+.menu__item:hover {
+  text-decoration: underline;
+}
+.menu__item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.menu--standard {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .menu--standard {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    display: inline-block;
+  }
+}
+
+.menu--hamburger {
+  margin: 0 15px;
+}
+@media screen and (min-width: 1024px) {
+  .menu--hamburger {
+    display: none;
+  }
+}
+
+.line {
+  width: 25px;
+  height: 1.5px;
+  background-color: #353434;
+  display: block;
+}
+.line:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+/* ahooooj command shift lomeno */
+.logo {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  margin: 20px 0;
+}
+@media screen and (min-width: 1024px) {
+  .logo {
+    grid-column: 1/-1;
+    margin: 80px auto 30px auto;
+  }
+}
+.logo__image {
+  margin-left: 7px;
+}
+@media screen and (min-width: 1024px) {
+  .logo__image {
+    display: none;
+  }
+}
+.logo__image--bigger {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .logo__image--bigger {
+    display: block;
+    margin-left: 60px;
+  }
+}
+
+.hero {
+  margin: 0 auto;
+  width: 100%;
+  grid-row: 2/3;
+  grid-column: 1/-1;
+}
+.hero__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 15%;
+     object-position: 0 15%;
+  margin: 0 auto;
+}
+
+.content {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  margin-top: 20px;
+  display: grid;
+  gap: 30px;
+}
+@media screen and (min-width: 1024px) {
+  .content {
+    grid-template-columns: 3fr 1.1fr;
+    grid-template-rows: auto auto;
+    gap: 40px 90px;
+    margin: 40px 0 80px 0;
+  }
+}
+
+.article__category {
+  margin: 0;
+  text-transform: uppercase;
+  color: #DFB0B0;
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: underline;
+  font-family: "Nunito Sans", sans-serif;
+}
+@media screen and (min-width: 1024px) {
+  .article__category--primary {
+    text-align: center;
+  }
+}
+.article__category--secondary {
+  font-size: 10px;
+  text-align: center;
+}
+
+.article__title {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 8px 0;
+}
+@media screen and (min-width: 1024px) {
+  .article__title--primary {
+    text-align: center;
+    font-size: 28px;
+  }
+}
+.article__title--secondary {
+  font-size: 20px;
+  margin: 4px 0;
+  text-align: center;
+}
+
+.article__date {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+}
+@media screen and (min-width: 1024px) {
+  .article__date--primary {
+    text-align: center;
+  }
+}
+.article__date--secondary {
+  text-align: center;
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.link {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.link__href {
+  color: #DFB0B0;
+  text-decoration: underline;
+  font-family: "Frank Ruhl Libre", serif;
+}
+.link--complementary {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.article__quote {
+  margin: 25px 0;
+  color: rgba(53, 52, 52, 0.5450980392);
+  font-family: "Frank Ruhl Libre", serif;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+}
+@media screen and (min-width: 1024px) {
+  .article__quote {
+    margin: 50px 90px;
+    line-height: 1.7;
+  }
+}
+
+.primary {
+  position: relative;
+}
+.primary::after {
+  position: absolute;
+  content: "";
+  height: 1.5px;
+  background-color: #353434;
+  margin-top: 10px;
+  width: 96%;
+  left: 2%;
+}
+@media screen and (min-width: 1024px) {
+  .primary::after {
+    width: 90%;
+    left: 5%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .primary {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+}
+
+.article__picture--primary {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 20px 0;
+}
+@media screen and (min-width: 1024px) {
+  .article__picture--primary {
+    height: 450px;
+  }
+}
+.article__perex {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 1024px) {
+  .articles {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 0;
+  }
+}
+.articles__more {
+  margin: 20px 10px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.articles__link {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.arrow--right {
+  border: solid #DFB0B0;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-left: 4px;
+  margin-bottom: 1px;
+}
+
+.article--secondary {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  margin: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .article--secondary {
+    display: block;
+  }
+}
+.article__picture--secondary {
+  flex-basis: 30%;
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .article__picture--secondary {
+    height: 250px;
+  }
+}
+
+.complementary {
+  font-family: "Nunito Sans", sans-serif;
+}
+@media screen and (min-width: 1024px) {
+  .complementary {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+  }
+}
+
+.title--complementary {
+  font-family: "Frank Ruhl Libre", serif;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 0;
+  margin-bottom: 25px;
+  border: 2px solid #DFB0B0;
+}
+
+.author {
+  margin-bottom: 50px;
+}
+.author__picture {
+  width: 60%;
+  display: block;
+  margin: 30px auto 20px auto;
+}
+.author__text {
+  margin: 0;
+  padding: 10px 22px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.news {
+  margin-bottom: 50px;
+}
+.news__item {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: 50px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+.news__date {
+  margin: 5px;
+  border-radius: 50%;
+  background-color: #DFB0B0;
+}
+.news__message {
+  align-self: center;
+}
+.news__text {
+  font-size: 13px;
+}
+
+.text--special {
+  color: white;
+  font-size: 11px;
+  line-height: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.poster {
+  position: relative;
+  margin: 0 auto;
+}
+.poster__picture {
+  width: 100%;
+}
+.poster__button {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  font-size: 16px;
+  background-color: #DFB0B0;
+  color: white;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+}
+.poster__button:hover {
+  background-color: #c57979;
+}
+.poster__text {
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+  color: #353434;
+  font-weight: 300;
+}
+
+.footer {
+  grid-row: 4/5;
+  grid-column: -1/1;
+  background-color: #353434;
+  padding: 50px 7%;
+}
+@media screen and (min-width: 1024px) {
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer__title {
+  padding: 0;
+  color: #DFB0B0;
+  font-family: "Frank Ruhl Libre", serif;
+  letter-spacing: 0.7px;
+  font-weight: 400;
+  font-size: 24px;
+}
+@media screen and (min-width: 1024px) {
+  .footer__title {
+    display: inline-block;
+  }
+}
+.footer__subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  color: #DFB0B0;
+}
+@media screen and (min-width: 1024px) {
+  .footer__subtitle {
+    display: inline-block;
+    margin-left: 16px;
+  }
+}
+.footer__text {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  margin: 10px 0;
+}
+.footer__text:not(:last-child) {
+  margin-top: 40px;
+}
+.footer__logo {
+  height: 60px;
+  margin-top: 20px;
+}
+@media screen and (min-width: 1024px) {
+  .footer__logo {
+    height: 100px;
+  }
+}/*# sourceMappingURL=style.css.map */
