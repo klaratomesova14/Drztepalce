@@ -30,6 +30,12 @@
     }
 }
 
+.articles--vertical {
+    @include desktop {
+        display: block;
+    }
+}
+
 .arrow--right {
     border: solid #DFB0B0;
     border-width: 0 1.5px 1.5px 0;
