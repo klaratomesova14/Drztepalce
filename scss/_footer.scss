@@ -10,24 +10,25 @@
     grid-row: 4 / 5;
     grid-column: -1 / 1;
     background-color: #353434;
-    padding: 50px 7%;
+    color: white;
+    padding: 100px 7%;
 
     &__wrapper {
 
       @include desktop {
         display: flex;
         justify-content: space-between;
-        align-items: center;
       }
     }
 
     &__title {
       padding: 0;
-      color: #DFB0B0;
+      margin: 10px 0;
       font-family: 'Frank Ruhl Libre', serif;
       letter-spacing: 0.7px;
       font-weight: 400;
-      font-size: 24px; 
+      font-size: 15px; 
+      color:rgba(190, 189, 189, 0.722);
       
       @include desktop {
         display: inline-block;
@@ -36,36 +37,55 @@
     }
 
     &__subtitle {
+      padding: 0;
+      margin: 0;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 15px;
       display: inline-block;
       font-family: 'Nunito', sans-serif;
-      color: #DFB0B0;
+      color:rgba(190, 189, 189, 0.722);
 
       @include desktop {
         display: inline-block;
-        margin-left: 16px;
       }
     }
+
+    &__info {
+      @include desktop {
+        margin-right: 50px;
+    }
+   }
 
     &__text {
       color: white;
+      font-size: 15px;
       font-family: 'Nunito Sans', sans-serif;
-      margin: 10px 0;
+      margin: 20px 0;
 
-      &:not(:last-child) {
-        margin-top: 40px;
-      }
+      @include desktop {
+        margin: 15px 0;
+
     }
+  }
 
  
     &__logo {
-      height: 60px;
-      margin-top: 20px;
+        width: 70%;
+        margin-bottom: 30px;
 
       @include desktop {
-        height: 100px;
+        width: 25em;
+        margin-bottom: 120px;
+        margin-right: 50px;
     }
-  }
+    }
+
+    &__instagram {
+      width: 35px;
+
+      @include desktop {
+        margin-bottom: 10px;
+    }
+    }
 
 }

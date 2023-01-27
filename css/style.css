@@ -17,7 +17,7 @@ body {
 @media screen and (min-width: 1024px) {
   .layout {
     grid-template-columns: auto 86% auto;
-    grid-template-rows: 30px auto auto auto;
+    grid-template-rows: 25px auto auto auto;
   }
 }
 
@@ -219,6 +219,13 @@ body {
   margin-left: 5px;
 }
 
+.article__paragraph {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
 .link {
   text-align: center;
   font-size: 15px;
@@ -236,10 +243,13 @@ body {
 
 .article__quote {
   margin: 25px 0;
-  color: rgba(53, 52, 52, 0.5450980392);
+  color: #d09fb1;
   font-family: "Frank Ruhl Libre", serif;
   letter-spacing: 0.5px;
-  font-size: 18px;
+  font-size: 20px;
+}
+.article__quote--primary {
+  color: #353434;
 }
 @media screen and (min-width: 1024px) {
   .article__quote {
@@ -286,10 +296,11 @@ body {
   }
 }
 .article__perex {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
-  margin: 0;
-  line-height: 1.5;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  line-height: 1.6;
 }
 
 @media screen and (min-width: 1024px) {
@@ -310,6 +321,12 @@ body {
 .articles__link {
   font-size: 18px;
   margin: 10px 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .articles--vertical {
+    display: block;
+  }
 }
 
 .arrow--right {
@@ -376,7 +393,7 @@ body {
 }
 .author__text {
   margin: 0;
-  padding: 10px 22px;
+  padding: 10px 20px;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -421,7 +438,7 @@ body {
 }
 .poster__button {
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   right: 15%;
   font-size: 16px;
   background-color: #DFB0B0;
@@ -435,7 +452,7 @@ body {
 }
 .poster__text {
   position: absolute;
-  bottom: 25%;
+  bottom: 22%;
   left: 10%;
   color: #353434;
   font-weight: 300;
@@ -445,22 +462,23 @@ body {
   grid-row: 4/5;
   grid-column: -1/1;
   background-color: #353434;
-  padding: 50px 7%;
+  color: white;
+  padding: 100px 7%;
 }
 @media screen and (min-width: 1024px) {
   .footer__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 }
 .footer__title {
   padding: 0;
-  color: #DFB0B0;
+  margin: 10px 0;
   font-family: "Frank Ruhl Libre", serif;
   letter-spacing: 0.7px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 15px;
+  color: rgba(190, 189, 189, 0.722);
 }
 @media screen and (min-width: 1024px) {
   .footer__title {
@@ -468,32 +486,51 @@ body {
   }
 }
 .footer__subtitle {
+  padding: 0;
+  margin: 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   display: inline-block;
   font-family: "Nunito", sans-serif;
-  color: #DFB0B0;
+  color: rgba(190, 189, 189, 0.722);
 }
 @media screen and (min-width: 1024px) {
   .footer__subtitle {
     display: inline-block;
-    margin-left: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__info {
+    margin-right: 50px;
   }
 }
 .footer__text {
   color: white;
+  font-size: 15px;
   font-family: "Nunito Sans", sans-serif;
-  margin: 10px 0;
+  margin: 20px 0;
 }
-.footer__text:not(:last-child) {
-  margin-top: 40px;
+@media screen and (min-width: 1024px) {
+  .footer__text {
+    margin: 15px 0;
+  }
 }
 .footer__logo {
-  height: 60px;
-  margin-top: 20px;
+  width: 70%;
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 1024px) {
   .footer__logo {
-    height: 100px;
+    width: 25em;
+    margin-bottom: 120px;
+    margin-right: 50px;
+  }
+}
+.footer__instagram {
+  width: 35px;
+}
+@media screen and (min-width: 1024px) {
+  .footer__instagram {
+    margin-bottom: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
