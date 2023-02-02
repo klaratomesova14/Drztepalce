@@ -1,4 +1,6 @@
 @use "mixins";
+@use "colors";
+@use "fonts";
 
 @mixin desktop {
   @media screen and (min-width: 1024px) {
@@ -11,13 +13,23 @@
     grid-column: 2 / 3;
     margin-top: 20px;
     display: grid;
-    gap: 30px;
+    gap: 50px;
 
     @include desktop {
     grid-template-columns: 3fr 1.1fr;
     grid-template-rows: auto auto;
-    gap: 40px 90px;
+    gap: 60px 90px;
     margin: 40px 0 80px 0;
+  }
+}
+
+.article__text {
+  text-align: left;
+  padding: 15px 20px;
+
+  @include desktop {
+    text-align: center;
+    padding: 5px 15px;
   }
 }
 
@@ -25,34 +37,32 @@
   
   margin: 0;
   text-transform: uppercase;
-  color: #DFB0B0;
+  color: colors.$complementary-darker;
   font-weight: 500;
   font-size: 12px;
   text-decoration: underline;
-  font-family: 'Nunito Sans', sans-serif;
-
-  &--primary {
-    @include desktop {
-      text-align: center;
-    }
-  }
+  font-family: fonts.$sans;
 
   &--secondary {
     font-size: 10px;
-    text-align: center;
+
   }
 }
 
 .article__title {
 
-  font-family: 'Frank Ruhl Libre', serif;
-  font-size: 24px;
+  font-family: fonts.$serif;
+  font-size: 22px;
   font-weight: 300;
   margin: 8px 0;
 
+  @include desktop {
+    text-align: center;
+  }
+
   &--primary {
     @include desktop {
-      text-align: center;
+      
       font-size: 28px;
     }
   }
@@ -60,7 +70,6 @@
   &--secondary {
       font-size: 20px;
       margin: 4px 0;
-      text-align: center;
     }
   }
 
@@ -68,28 +77,28 @@
 .article__date {
   font-size: 12px;
   font-weight: 500;
-  font-family: 'Nunito', sans-serif;
+  font-family: fonts.$sans;
   margin: 0;
 
-  &--primary {
-    @include desktop {
-      text-align: center;
-    }
-  }
-
   &--secondary {
-    text-align: center;
     font-size: 10px;
-    margin-left: 5px;
   }
 }
 
 
 .article__paragraph {
-  font-family: 'Nunito', sans-serif;
+  font-family: fonts.$sans;
   font-size: 16px;
+  margin-top: 0;
   margin-bottom: 25px;
   line-height: 1.6;
+  text-align: left;
+
+  &--edit {
+    color: colors.$complementary-darker;
+    font-family: fonts.$serif;
+    margin-top: 100px;
+  }
 }
 
 
@@ -97,33 +106,42 @@
   text-align: center;
   font-size: 15px;
   line-height: 1.5;
+  font-family: fonts.$serif;
+  color: colors.$complementary-darker;
 
   &__href {
-    color: #DFB0B0;
-    text-decoration: underline;
-    font-family: 'Frank Ruhl Libre', serif;
+    text-decoration: none;
+    color: colors.$primary;
+
+    &--home {
+      color: colors.$complementary-darker;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    }
   }
 
-  &--complementary {
-    margin: 0;
-    margin-top: 10px;
-  }
+.article__link {
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .article__quote {
-  margin: 25px 0;
-  color: #d09fb1;
-  font-family: 'Frank Ruhl Libre', serif;
+  margin: 25px;
+  font-family: fonts.$serif;
   letter-spacing: 0.5px;
-  font-size: 20px;
+  line-height: 1.7;
+  font-size: 16px;
+  text-align: left;
+  color: colors.$complementary-darker;
 
-  &--primary {
-    color: #353434;
+  &--home {
+    color: colors.$primary
   }
 
   @include desktop {
     margin: 50px 90px;
-    line-height: 1.7;
+    font-size: 18px;
   }
 }
 

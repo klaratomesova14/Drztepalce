@@ -1,4 +1,6 @@
 @use "mixins";
+@use "colors";
+@use "fonts";
 
 @mixin desktop {
   @media screen and (min-width: 1024px) {
@@ -7,7 +9,7 @@
 }
 
 .complementary {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: fonts.$sans;
 
     @include desktop {
         grid-row: 1 / -1;
@@ -16,20 +18,20 @@
 }
 
 .title--complementary {
-    font-family: 'Frank Ruhl Libre', serif;
+    font-family: fonts.$serif;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     padding: 10px 0;
     margin-bottom: 25px;
-    border: 2px solid #DFB0B0;
+    border: 2px solid colors.$complementary;
 }
 
 .author {
     margin-bottom: 50px;
 
     &__picture {
-      width: 60%;
+      max-width: 500px;
       display: block;
       margin: 30px auto 20px auto;
     }
@@ -45,21 +47,21 @@
   
   
 .news {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   
     &__item {
       display: grid;
       grid-template-columns: 50px auto;
       grid-template-rows: 50px;
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       gap: 5px;
     }
   
     &__date {
       margin: 5px;
       border-radius: 50%;
-      background-color: #DFB0B0;
+      background-color: colors.$complementary;
     }
   
     &__message {
@@ -93,7 +95,7 @@
     bottom: 8%;
     right: 15%;
     font-size: 16px;
-    background-color: #DFB0B0;
+    background-color: colors.$complementary;
     color: white;
     font-weight: 500;
     padding: 12px 24px;
@@ -108,7 +110,7 @@
     position: absolute;
     bottom: 22%;
     left: 10%;
-    color: #353434;
+    color: colors.$primary;
     font-weight: 300;
 }
 }

@@ -1,7 +1,11 @@
+@use "mixins";
+@use "colors";
+@use "fonts";
+
 .top {
     grid-row: 1/2;    
     grid-column: 1/-1;
-    background-color: #353434;
+    background-color: colors.$primary;
 
     
   }

@@ -1,3 +1,7 @@
+@use "mixins";
+@use "colors";
+@use "fonts";
+
 @mixin desktop {
     @media screen and (min-width: 1024px) {
         @content;
@@ -6,13 +10,14 @@
 
 .header {
     grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 25px auto;
     grid-template-rows: auto 250px;
 
     @include desktop {
         grid-template-rows: auto 560px;
+        grid-column: 2 / 3;
     }
 }
 
@@ -31,7 +36,7 @@
     }
 
     &__item {
-        color: #353434;
+        color: colors.$primary;
         text-transform: uppercase;
         text-decoration: none;
         font-weight: 600;
@@ -54,7 +59,7 @@
     display: none;
     
     @include desktop {
-        font-family: "Nunito Sans", sans-serif;
+        font-family: fonts.$sans;
         font-size: 14px;
         font-weight: 600;
         letter-spacing: 0.5px;
@@ -75,7 +80,7 @@
 .line {
     width: 25px;
     height: 1.5px;
-    background-color: #353434;
+    background-color: colors.$primary;
     display: block;
 
     &:not(:last-child) {

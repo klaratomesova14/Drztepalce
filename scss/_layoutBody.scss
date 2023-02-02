@@ -1,4 +1,6 @@
 @use "mixins";
+@use "colors";
+@use "fonts";
 
 @mixin desktop {
   @media screen and (min-width: 1024px) {

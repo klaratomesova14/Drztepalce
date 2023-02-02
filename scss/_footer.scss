@@ -1,4 +1,6 @@
 @use "mixins";
+@use "colors";
+@use "fonts";
 
 @mixin desktop {
   @media screen and (min-width: 1024px) {
@@ -9,7 +11,7 @@
 .footer {
     grid-row: 4 / 5;
     grid-column: -1 / 1;
-    background-color: #353434;
+    background-color: colors.$primary;
     color: white;
     padding: 100px 7%;
 
@@ -24,7 +26,7 @@
     &__title {
       padding: 0;
       margin: 10px 0;
-      font-family: 'Frank Ruhl Libre', serif;
+      font-family: fonts.$serif;
       letter-spacing: 0.7px;
       font-weight: 400;
       font-size: 15px; 
@@ -42,8 +44,8 @@
       font-weight: 400;
       font-size: 15px;
       display: inline-block;
-      font-family: 'Nunito', sans-serif;
-      color:rgba(190, 189, 189, 0.722);
+      font-family: fonts.$sans;
+      color: colors.$special;
 
       @include desktop {
         display: inline-block;
@@ -59,7 +61,7 @@
     &__text {
       color: white;
       font-size: 15px;
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: fonts.$sans;
       margin: 20px 0;
 
       @include desktop {

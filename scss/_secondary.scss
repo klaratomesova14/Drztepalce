@@ -1,4 +1,6 @@
 @use "mixins";
+@use "colors";
+@use "fonts";
 
 @mixin desktop {
   @media screen and (min-width: 1024px) {
@@ -6,8 +8,9 @@
   }
 }
 
-
 .articles {
+
+    margin-top: 30px;
 
     @include desktop {
         grid-row: 2 / 3;
@@ -36,18 +39,32 @@
     }
 }
 
-.arrow--right {
-    border: solid #DFB0B0;
+.arrow {
+    border: solid colors.$primary;
     border-width: 0 1.5px 1.5px 0;
     display: inline-block;
     padding: 3px;
+    margin-bottom: 1px;
+}
+.arrow--left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin-right: 4px;
+}
+
+.arrow--right {
+    border-color: colors.$complementary;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     margin-left: 4px;
-    margin-bottom: 1px;
 }
 
 .article {
+
+    @include desktop {
+        text-align: center;
+    }
+
     
     &--secondary {
         display: grid;
@@ -56,6 +73,7 @@
     
         @include desktop {
             display: block;
+            margin-bottom: 20px;
         }
     }
 
