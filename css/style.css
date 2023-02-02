@@ -252,6 +252,11 @@ body {
   font-size: 14px;
 }
 
+.button__link {
+  color: white;
+  text-decoration: none;
+}
+
 .article__link {
   text-align: left;
   margin-bottom: 20px;
@@ -433,9 +438,9 @@ body {
   margin-bottom: 50px;
 }
 .author__picture {
-  max-width: 500px;
+  max-width: 250px;
   display: block;
-  margin: 30px auto 20px auto;
+  margin: 20px auto 20px auto;
 }
 .author__text {
   margin: 0;
