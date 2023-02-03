@@ -428,7 +428,7 @@ body {
   font-family: "Roboto Serif", serif;
   text-align: center;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
   padding: 10px 0;
   margin-bottom: 25px;
   border: 2px solid #e4c7c7;
@@ -453,31 +453,32 @@ body {
   margin-bottom: 60px;
 }
 .news__item {
-  display: grid;
-  grid-template-columns: 50px auto;
-  grid-template-rows: 50px;
-  margin-top: 0;
+  display: flex;
+  margin-top: 5px;
   margin-bottom: 15px;
-  gap: 5px;
+  gap: 10px;
+  align-items: center;
 }
-.news__date {
-  margin: 5px;
+.news__circle {
   border-radius: 50%;
   background-color: #e4c7c7;
-}
-.news__message {
-  align-self: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
 }
 .news__text {
   font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .text--special {
   color: white;
   font-size: 11px;
-  line-height: 20px;
+  line-height: 40px;
   font-weight: 600;
   text-align: center;
+  margin: 0;
 }
 
 .poster {
@@ -499,14 +500,14 @@ body {
   border: none;
 }
 .poster__button:hover {
-  background-color: #c57979;
+  background-color: #d4a9a9;
 }
 .poster__text {
   position: absolute;
   bottom: 22%;
   left: 10%;
   color: #353434;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .footer {

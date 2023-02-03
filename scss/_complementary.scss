@@ -21,7 +21,7 @@
     font-family: fonts.$serif;
     text-align: center;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
     padding: 10px 0;
     margin-bottom: 25px;
     border: 2px solid colors.$complementary;
@@ -50,26 +50,25 @@
     margin-bottom: 60px;
   
     &__item {
-      display: grid;
-      grid-template-columns: 50px auto;
-      grid-template-rows: 50px;
-      margin-top: 0;
+      display: flex;
+      margin-top: 5px;
       margin-bottom: 15px;
-      gap: 5px;
+      gap: 10px;
+      align-items: center;
     }
-  
-    &__date {
-      margin: 5px;
+
+    &__circle {
       border-radius: 50%;
       background-color: colors.$complementary;
+      width: 40px;
+      height: 40px;
+      margin: 0;
     }
-  
-    &__message {
-      align-self: center;
-    }
-  
+
     &__text {
       font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
     } 
 }
 
@@ -77,9 +76,10 @@
 .text--special {
     color: white;
     font-size: 11px;
-    line-height: 20px;
+    line-height: 40px;
     font-weight: 600;
     text-align: center;
+    margin: 0;
   }
   
 .poster {
@@ -102,7 +102,7 @@
     border: none;
 
     &:hover {
-    background-color: #c57979;
+    background-color: colors.$complementary-darker;
     }
 }
 
@@ -111,6 +111,6 @@
     bottom: 22%;
     left: 10%;
     color: colors.$primary;
-    font-weight: 300;
+    font-weight: 400;
 }
 }
