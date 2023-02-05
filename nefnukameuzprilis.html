@@ -47,6 +47,36 @@ title: Article
         <p class="article__paragraph">Je to přesně tak hrozný, jak nám to připadá a pokud má někdy někdo pocit, že jen příliš fňukáme, tak o tom ví kulový. </p>
     
     </article>    
+
+    <div id="comments"></div>
+
+    <script>
+        let commentsDiv = document.getElementById('comments')
+        
+        async function loadComments() {
+            let url = 'https://bookaholic.cz/api/test.php?bookId=41&category=1'
+            try {
+                let res = await fetch(url)
+                let data = await res.json()
+    
+                let html = '<h3>Komentáře</h3>'
+    
+                data.forEach(row => {
+                    html += `<div class="comment">
+                                <p><b>${row.username}</b></p>
+                                <p>${row.date}</p>
+                                <p>${row.comment}</p>
+                            </div>`       
+                })
+                commentsDiv.innerHTML = html
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        
+        window.addEventListener('load', loadComments)
+    </script>
+
 </div>
 
 <div class="complementary">
