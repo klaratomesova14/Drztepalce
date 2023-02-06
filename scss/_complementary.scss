@@ -92,17 +92,18 @@
 
 &__button {
     position: absolute;
-    bottom: 8%;
-    right: 15%;
-    font-size: 16px;
-    background-color: colors.$complementary;
+    bottom: 7%;
+    right: 12%;
+    font-size: 15px;
+    background-color: colors.$complementary-darker;
     color: white;
     font-weight: 500;
-    padding: 12px 24px;
+    padding: 12px 26px;
     border: none;
+    border-radius: 5px;
 
     &:hover {
-    background-color: colors.$complementary-darker;
+    background-color: colors.$complementary-darkest;
     }
 }
 

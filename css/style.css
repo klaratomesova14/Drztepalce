@@ -281,6 +281,50 @@ body {
   }
 }
 
+.comments {
+  width: 100%;
+  margin-top: 150px;
+}
+
+.comments__title {
+  font-family: "Roboto Serif", serif;
+  color: #d4a9a9;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.comments__text {
+  resize: none;
+  height: 120px;
+}
+
+.comments__field {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: #c4c1c1;
+  background-color: transparent;
+  border: 1px solid #c4c1c1;
+  border-radius: 5px;
+}
+
+.comments__button {
+  font-size: 15px;
+  background-color: #d4a9a9;
+  color: white;
+  font-weight: 500;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 5px;
+}
+.comments__button:hover {
+  background-color: #b18e8e;
+}
+
 @media screen and (min-width: 1024px) {
   .primary {
     grid-row: 1/2;
@@ -490,17 +534,18 @@ body {
 }
 .poster__button {
   position: absolute;
-  bottom: 8%;
-  right: 15%;
-  font-size: 16px;
-  background-color: #e4c7c7;
+  bottom: 7%;
+  right: 12%;
+  font-size: 15px;
+  background-color: #d4a9a9;
   color: white;
   font-weight: 500;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border: none;
+  border-radius: 5px;
 }
 .poster__button:hover {
-  background-color: #d4a9a9;
+  background-color: #b18e8e;
 }
 .poster__text {
   position: absolute;

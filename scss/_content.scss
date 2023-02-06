@@ -151,4 +151,47 @@
   }
 }
 
+.comments {
+  width: 100%;
+  margin-top: 150px;
+}
 
+.comments__title {
+  font-family: fonts.$serif;
+  color: colors.$complementary-darker;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.comments__text {
+  resize: none;
+  height: 120px;
+}
+
+.comments__field {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  font-family: fonts.$sans;
+  font-size: 14px;
+  color: #c4c1c1;
+  background-color: transparent;
+  border: 1px solid #c4c1c1;
+  border-radius: 5px;
+}
+
+.comments__button {
+  font-size: 15px;
+  background-color: colors.$complementary-darker;
+  color: white;
+  font-weight: 500;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+  background-color: colors.$complementary-darkest;
+  }
+}

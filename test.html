@@ -79,12 +79,15 @@ title: Article
         window.addEventListener('load', loadComments)
     </script>
     -->
-    
+
 <form method="post" class="comments">
     <h3 class="comments__title">komentáře</h3>
-    <textarea class="comments__text" name="comment" id="comment" placeholder="napiš komentář..." required></textarea>
-    <input class="comments__name" type="text" name="name" id="name" placeholder="jméno" required>
-    <input class="comments__button" type="submit" name="send" id="send" value="odeslat">
+
+        <textarea class="comments__text comments__field" name="comment" id="comment" placeholder="napiš komentář..." required></textarea>
+
+        <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno" required>
+
+    <input class="comments__button" type="submit" name="send" id="send" value="Odeslat">
 </form>
 
 </div>
