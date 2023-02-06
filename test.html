@@ -40,11 +40,6 @@ title: Article
         <p class="article__paragraph">
             Nakonec musím přiznat, že fňukám asi o něco víc, než je potřeba. Nebo spíš takhle - určitě víc, než je zdravé. Ale trocha toho fňukání mi přijde fér. Osvobozující.
         </p>
-
-        <p class="article__paragraph article__paragraph--edit">edit 31.1.2023</p>
-        <p class="article__paragraph">Dneska se dcera, která již běžně kaká na záchodě ve svých 3 letech a 8 měsících opět beze slova a beze zvuku pokakala v pokojíčku do kalhotek a následně svůj výtvor nacpala mezi rám čalouněné postele a matraci. Plus koberec. Plus její vlasy. </p>
-
-        <p class="article__paragraph">Je to přesně tak hrozný, jak nám to připadá a pokud má někdy někdo pocit, že jen příliš fňukáme, tak o tom ví kulový. </p>
     
     </article>    
 
@@ -80,15 +75,38 @@ title: Article
     </script>
     -->
 
-<form method="post" class="comments">
-    <h3 class="comments__title">komentáře</h3>
+<div class="commments">
+    <form method="post" class="comments__form">
+        <h3 class="comments__title">komentáře</h3>
 
-        <textarea class="comments__text comments__field" name="comment" id="comment" placeholder="napiš komentář..." required></textarea>
+            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>
 
-        <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno" required>
+            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno" required>
 
-    <input class="comments__button" type="submit" name="send" id="send" value="Odeslat">
-</form>
+        <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+    </form>
+
+    <div class="comments__list">
+        <div class="comment">
+            <h4 class="comment__name">Martina</h4>
+            <p class="comment__date">před 5 hodinami</p>
+            <p class="comment__message">Tak tohle mi moc pomohlo. Díky, že v tom nejsem sama!</p>
+        </div>
+
+        <div class="comment">
+            <h4 class="comment__name">lída</h4>
+            <p class="comment__date">28.1.2023</p>
+            <p class="comment__message">Naprosto rozumím. U nás to samý, chce to vydržet :)</p>
+        </div>
+
+        <div class="comment">
+            <h4 class="comment__name">Karel</h4>
+            <p class="comment__date">24.1.2023</p>
+            <p class="comment__message">Super článek, těším se na další.</p>
+        </div>
+    </div>
+</div>
+
 
 </div>
 

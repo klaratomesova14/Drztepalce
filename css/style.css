@@ -281,7 +281,7 @@ body {
   }
 }
 
-.comments {
+.comments__form {
   width: 100%;
   margin-top: 150px;
 }
@@ -306,9 +306,9 @@ body {
   padding: 10px 12px;
   font-family: "Nunito", sans-serif;
   font-size: 14px;
-  color: #c4c1c1;
   background-color: transparent;
-  border: 1px solid #c4c1c1;
+  color: #353434;
+  border: 1px solid rgba(190, 189, 189, 0.7215686275);
   border-radius: 5px;
 }
 
@@ -320,9 +320,50 @@ body {
   padding: 12px 28px;
   border: none;
   border-radius: 5px;
+  margin-top: 20px;
 }
 .comments__button:hover {
   background-color: #b18e8e;
+}
+
+.comments__list {
+  margin-top: 70px;
+}
+
+.comment {
+  margin: 40px 0 70px 0;
+  position: relative;
+}
+.comment:not(:last-child):after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background-color: rgba(190, 189, 189, 0.7215686275);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.comment__name {
+  display: inline-block;
+  margin-right: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+}
+
+.comment__date {
+  display: inline-block;
+  color: rgba(190, 189, 189, 0.7215686275);
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.comment__message {
+  font-family: "Nunito", sans-serif;
+  margin: 15px 0;
 }
 
 @media screen and (min-width: 1024px) {
