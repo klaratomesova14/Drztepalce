@@ -4,7 +4,7 @@ title: Article
 ---
 
 <div class="primary">
-    <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a>
+    <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a></p>
     <article class="article article--primary">
         <h3 class="article__category article__category--primary">Zamyšlení</h3>
         <h1 class="article__title article__title--primary">Nefňukáme už příliš?</h1>
@@ -43,72 +43,85 @@ title: Article
     
     </article>    
 
-    <!--
+    
+    
+    <div class="comments">
 
-    <div id="comments"></div>
-
-    <script>
-        let commentsDiv = document.getElementById('comments')
+        <form method="post" class="comments__form">
+            <h3 class="comments__title">komentáře</h3>
+            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+            <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+            <button class="comments__button" name="send" id="send">Odeslat</button>
+        </form>
         
-        async function loadComments() {
-            let url = 'https://bookaholic.cz/api/test.php?bookId=41&category=1'
-            try {
-                let res = await fetch(url)
-                let data = await res.json()
+        <div id="comments"></div>
+        
+        </div>
     
-                let html = '<h3>Komentáře</h3>'
+        <script>
+            let articleId = 1
+        
+            let commentsDiv = document.getElementById('comments')
+            let sendCommentBtn = document.getElementById('send')
+            
+            async function loadComments() {
+                let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                try {
+                    let res = await fetch(url)
+                    let data = await res.json()
+        
+                    let html = '<div class="comments__list">'
+        
+        data.forEach(row => {
+            html += `<div class="comment">
+                        <h4 class="comment__name">${row.username}</h4>
+                        <p class="comment__date">${row.date}</p>
+                        <p class="comment__message">${row.comment}</p>
+                    </div>`       
+        })
     
-                data.forEach(row => {
-                    html += `<div class="comment">
-                                <p><b>${row.username}</b></p>
-                                <p>${row.date}</p>
-                                <p>${row.comment}</p>
-                            </div>`       
-                })
-                commentsDiv.innerHTML = html
-            } catch (error) {
-                console.log(error)
+        html += '</div>'
+    
+                    commentsDiv.innerHTML = html
+                } catch (error) {
+                    console.log(error)
+                }
             }
-        }
         
-        window.addEventListener('load', loadComments)
-    </script>
-    -->
-
-<div class="commments">
-    <form method="post" class="comments__form">
-        <h3 class="comments__title">komentáře</h3>
-
-            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>
-
-            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno" required>
-
-        <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
-    </form>
-
-    <div class="comments__list">
-        <div class="comment">
-            <h4 class="comment__name">Martina</h4>
-            <p class="comment__date">před 5 hodinami</p>
-            <p class="comment__message">Tak tohle mi moc pomohlo. Díky, že v tom nejsem sama!</p>
-        </div>
-
-        <div class="comment">
-            <h4 class="comment__name">lída</h4>
-            <p class="comment__date">28.1.2023</p>
-            <p class="comment__message">Naprosto rozumím. U nás to samý, chce to vydržet :)</p>
-        </div>
-
-        <div class="comment">
-            <h4 class="comment__name">Karel</h4>
-            <p class="comment__date">24.1.2023</p>
-            <p class="comment__message">Super článek, těším se na další.</p>
-        </div>
-    </div>
+            async function addComment() {
+                let username = document.getElementById('name').value
+                let email = document.getElementById('email').value
+                let comment = document.getElementById('text').value
+        
+                let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+        
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify([articleId, username, email, comment]),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'Success') {
+                        loadComments()
+                        comments.scrollIntoView()
+                    } 
+                })
+                .catch(error => console.log(error))
+            }
+            
+            window.addEventListener('load', loadComments)
+            sendCommentBtn.addEventListener('click', addComment)
+        </script>
+    
 </div>
+  
 
 
-</div>
+
 
 <div class="complementary">
     <div class="articles__suggestion">
