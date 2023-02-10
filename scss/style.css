@@ -235,6 +235,12 @@ body {
   margin-top: 100px;
 }
 
+@media screen and (min-width: 1024px) {
+  .articles--vertical .article--secondary .article__picture--secondary {
+    height: 200px;
+  }
+}
+
 .link {
   text-align: center;
   font-size: 15px;
@@ -652,6 +658,9 @@ body {
   .footer__text {
     margin: 15px 0;
   }
+}
+.footer__href {
+  color: white;
 }
 .footer__logo {
   width: 70%;

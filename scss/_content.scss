@@ -101,6 +101,12 @@
   }
 }
 
+.articles--vertical .article--secondary .article__picture--secondary {
+  @include desktop {
+    height: 200px;
+  }
+}
+
 
 .link {
   text-align: center;
