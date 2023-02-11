@@ -1,0 +1,72 @@
+    <div class="comments">
+
+        <form method="post" class="comments__form">
+            <h3 class="comments__title">komentáře</h3>
+            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+            <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+            <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+        </form>
+        
+        <div id="comments"></div>
+        
+        </div>
+    
+        <script>
+            let articleId = {{ title }}
+        
+            let commentsDiv = document.getElementById('comments')
+            let sendCommentBtn = document.getElementById('send')
+            
+            async function loadComments() {
+                let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                try {
+                    let res = await fetch(url)
+                    let data = await res.json()
+        
+                    let html = '<div class="comments__list">'
+        
+        data.forEach(row => {
+            html += `<div class="comment">
+                        <h4 class="comment__name">${row.username}</h4>
+                        <p class="comment__date">${row.date}</p>
+                        <p class="comment__message">${row.comment}</p>
+                    </div>`       
+        })
+    
+        html += '</div>'
+    
+                    commentsDiv.innerHTML = html
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        
+            async function addComment() {
+                let username = document.getElementById('name').value
+                let email = document.getElementById('email').value
+                let comment = document.getElementById('text').value
+        
+                let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+        
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify([articleId, username, email, comment]),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'Success') {
+                        loadComments()
+                        comments.scrollIntoView()
+                    } 
+                })
+                .catch(error => console.log(error))
+            }
+            
+            window.addEventListener('load', loadComments)
+            sendCommentBtn.addEventListener('click', addComment)
+        </script>
+</div>
