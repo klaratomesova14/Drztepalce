@@ -5,7 +5,6 @@ module.exports = function(eleventyConfig) {
     // Zkopírovat images/ a favicon/ do _site/images a _site/favicon
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addPassthroughCopy("favicon");
-    eleventyConfig.addPassthroughCopy("articles");
   
     // Zkopírovat css/ to _site/css/
     eleventyConfig.addPassthroughCopy("css");
