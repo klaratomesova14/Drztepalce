@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="kEa7JlF4b9kBflezsltGK3hjOBwe2cIILByiyBZ4x9E" />
     <title>Držte palce | útočiště pro rodiče dětí s poruchou autistického spektra</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +19,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
         </style>
 
-    <link rel="stylesheet" type="text/css" href="/scss/style.css?a"> 
+    <link rel="stylesheet" type="text/css" href="/css/style.css?a"> 
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -36,18 +35,76 @@
 
 </head>
 <body>
-
     <div class="layout">
-        
-        {% include "partials/header.njk" %}
+        <div class="top">
 
-        <div class="content">
-            {{ content | safe }}
         </div>
 
-        {% include "partials/footer.njk" %}
-            
-    </div>
+        <header class="header">
+            <!--
+            <div class="menu">
+                <div class="menu--standard">
+                    <a class="menu__item" href="/postrehy/">Postřehy</a>
+                    <a class="menu__item" href="/zamysleni/">Zamyšlení</a>
+                    <a class="menu__item" href="/article/"> Příběhy</a>
+                    <a class="menu__item" href="/oautorce/">O autorce</a>
+                </div>
 
+                <div class="menu--hamburger">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </div>
+            -->
+
+
+            <div class="logo">
+                
+                <a href="/"><img class="logo__image" src="/images/logo.svg" alt="logo Držte palce, útočiště pro rodiče děti s poruchou autistického spektra"></a>
+                <a href="/"><img class="logo__image--bigger" src="/images/logobigger.svg" alt="logo Držte palce, útočiště pro rodiče děti s poruchou autistického spektra"></a>
+            </div>
+
+            <div class="hero">
+                <img class="hero__image" src="/images/hero.jpg" alt="chlapec na poli">
+            </div>
+        
+        </header>
+
+<div class="content">
+
+{{ content | safe }}
+
+</div>
+
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__info">
+                    <img class="footer__logo" src="/images/logolight.svg" alt="logo drztepalce.cz">
+                    <h2 class="footer__title">DRŽTEPALCE.cz</h2>
+                    <h3 class="footer__subtitle">útočiště pro rodiče dětí s poruchou autistického spektra</h3>
+                </div>
+
+                <div class="footer__info">
+                    <p class="footer__text">Webové stránky pro rodiče dětí s PAS</p>
+                </div>
+
+                <div class="footer__info">
+                    <p class="footer__text">Informace pro rodiče, prarodiče, známé a kamarády dětí s autismem i všechny ostatní, co chtějí životu s autismem porozumět</p>
+                </div>
+
+                <div class="footer__info">
+                    <p class="footer__text">Sledujte nás</p>
+                    <a href="https://www.instagram.com/drztepalce/"><img class="footer__instagram" src="/images/instagram.svg" alt="logo instagramu"></a>
+                    <p class="footer__text">Napište nám</p>
+                    <p class="footer__text">drztepalce@email.cz
+                </div>
+                
+
+                    <!--<p class="footer__text">Pocity, zážitky a zkušenosti mámy dětí s autismem.</p> -->
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
