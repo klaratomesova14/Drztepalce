@@ -232,12 +232,6 @@ body {
   margin-top: 100px;
 }
 
-@media screen and (min-width: 1024px) {
-  .articles--vertical .article--secondary .article__picture--secondary {
-    height: 200px;
-  }
-}
-
 .article__picture--secondary {
   flex-basis: 30%;
   width: 100%;
