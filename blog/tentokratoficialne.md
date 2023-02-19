@@ -1,0 +1,165 @@
+---
+layout: article.njk
+title: Tentokrát oficiálně
+tags: blog
+date: 2023-02-14
+category: Zamyšlení
+image: nekonecnamocspanku3.jpg
+---
+
+    <div class="primary">
+        <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a></p>
+        <article class="article article--primary">
+            <h3 class="article__category article__category--primary">jak to bylo</h3>
+            <h1 class="article__title article__title--primary">Tentokrát oficiálně
+            </h1>
+            <h4 class="article__date article__date--primary">16. 12. 2022</h4>
+            <p class="article__perex">
+                Když už nešlo víc pochybovat o tom, že se dcera vydává bratrovým směrem a nebude se vyvíjet v souladu s tabulkami (to bylo někdy před druhými narozeninami), stáli jsme pár měsíců před těžkým rozhodnutím. Kontaktujeme dceřinu dětskou lékařku a absolvujeme všechna následná vyšetření, takzvané povinné kolečko, jak to paní doktorka nazývá, nebo budeme žít ve víře, že se dcera v průběhu dalšího roku zlepší natolik, aby zvládla projít tříletou prohlídkou a třeba se tak do budoucna vyhneme diagnóze autismus navždy zaznamenané v její kartě? Vím, hodně naivní představa, ale člověk věří a věřit chce. 
+            </p>        
+
+            <img class="article__picture article__picture--primary" src="/images/{{ image }}">
+
+            <p class="article__paragraph"> 
+                Jde o to, že se synem, který měl už z osmnáctiměsíční prohlídky zápis hyperaktivní a těžko zvladatelný, jsme jako mladí a nezkušení rodiče na doporučení doktorky sice navštívili neurologa, ale více odborně jsme jeho vznětlivost a opožděný vývoj řeči až do tříleté prohlídky neřešili. V tom roce a půl jsem taky psala diplomku a měla státnice, takže jsme s každým dalším dnem bojovali sami, jak se dalo. Když potom tříletá prohlídka dopadla tak katastrofálně, že syn za neustálého řevu skoro shodil doktorce diplom v rámu ze zdi, nenechal se zvážit ani změřit a požadavek, aby si postupně zakryl obě oči a říkal, co vidí na tabuli, mi přišel jako dobrý vtip, poprvé oficiálně padlo slovo autismus a my odcházeli se třemi žádankami na další vyšetření.
+            </p>
+
+            <p class="article__paragraph"> 
+                V těch třech letech to bylo vážně šílený období. Pro čerstvě šestadvacetiletou holku, jejíž komplet bezdětné kamarádky si užívaly mládí, to byly měsíce plné beznaděje. Bála jsem se jít na procházku, bála jsem se jít do herny. Když syn dostal záchvat vzteku, nebyla jsem schopna ho zvládnout. Proto jsem ani závěry od psychologa a neurologa v tu chvíli nebrala jako tragédii, byla jsem hrozně ráda, že jsme ty vyšetření vůbec nějak zvládli absolvovat. 
+            </p>
+
+            <p class="article__paragraph"> 
+                Psycholožka napsala podezření na PAS a poslala nás do 17měsíční čekačky na vyšetření v Nautisu. Prošli jsme si pár měsíci s ranou péčí a dojížděním na druhý konec Prahy. Nastoupili do maličké soukromé školky, kde byli rádi za každé dítě a zároveň moc neřešili zábavu a vzdělávání dětí, takže tam syna nechali si hrát a do ničeho ho moc nenutili. Nebyla to super školka, ale nekoukali tam na nás skrz prsty. Když nás před tím v jiné soukromé školce a později ve státních školkách odmítli při slovu autismus, i když jen suspektní, bolelo nás to. Vždyť je to fajn kluk, říkala jsem si. Vzteká se, zatím moc nemluví, ale je veselej a má dobrý srdce. Mrzelo mě, že to ostatní nevidí a nejsou ani ochotni to zkusit. 
+            </p>
+
+            <p class="article__quote">
+                „Když synovi konečně ve čtyřech a půl letech autismus diagnostikovali, zjistili jsme, jak to může být jiné. Najednou na nás byli lidé milí.”
+            </p>
+
+            <p class="article__paragraph">
+                Když synovi konečně ve čtyřech a půl letech autismus diagnostikovali, zjistili jsme, jak to může být jiné. Najednou na nás byli lidé milí. Třeba v SPC nebo později ve škole. Ve výsledku jsou tam rádi, že je synův autismus celkem dobře zvladatelný a vidí, že je to super hodnej a chytrej kluk jen s trochou trápení na duši.
+            </p>
+
+            <p class="article__paragraph">
+                Proto jsme se s dcerou nakonec rozhodli jít oficiální cestou. Ve dvou letech a třech měsících jsme zašli za doktorkou, absolvovali odborná vyšetření a právě i díky nim mohli v SPC zažádat o asistenta a dát ji jako integrované dítě do školky už ve třech letech. Do školky, kde jim záleží na tom, aby děti prospívaly, aby měly různorodý program, aby to tam měly rády. A navíc s asistentem - toho by syn ty první roky ve státní školce býval moc potřeboval.
+
+            </p>
+
+            <p class="article__paragraph">
+                Je fér říct, že realita nakonec vůbec nebyla tak růžová, jak jsme si představovali. Ale myslím si, že je to na dobré cestě. Protože je to super hodná a chytrá holka. Usměvavá a milující. A to přece musí každej poznat.
+            </p>
+        
+        </article>    
+        <div class="comments">
+
+            <form method="post" class="comments__form">
+                <h3 class="comments__title">komentáře</h3>
+                <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+                <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+                <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+                <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+            </form>
+            
+            <div id="comments"></div>
+            
+            </div>
+        
+            <script>
+                let articleId = 3
+            
+                let commentsDiv = document.getElementById('comments')
+                let sendCommentBtn = document.getElementById('send')
+                
+                async function loadComments() {
+                    let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                    try {
+                        let res = await fetch(url)
+                        let data = await res.json()
+            
+                        let html = '<div class="comments__list">'
+            
+            data.forEach(row => {
+                html += `<div class="comment">
+                            <h4 class="comment__name">${row.username}</h4>
+                            <p class="comment__date">${row.date}</p>
+                            <p class="comment__message">${row.comment}</p>
+                        </div>`       
+            })
+        
+            html += '</div>'
+        
+                        commentsDiv.innerHTML = html
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }
+            
+                async function addComment() {
+                    let username = document.getElementById('name').value
+                    let email = document.getElementById('email').value
+                    let comment = document.getElementById('text').value
+            
+                    let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+            
+                    fetch(url, {
+                        method: 'POST',
+                        body: JSON.stringify([articleId, username, email, comment]),
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8',
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status == 'Success') {
+                            loadComments()
+                            comments.scrollIntoView()
+                        } 
+                    })
+                    .catch(error => console.log(error))
+                }
+                
+                window.addEventListener('load', loadComments)
+                sendCommentBtn.addEventListener('click', addComment)
+            </script>
+    </div>
+
+    <div class="complementary">
+        <div class="articles__suggestion">
+            <h2 class="title title--complementary">další příspěvky</h2>
+            <div class="articles--vertical">
+                <article class="article article--secondary">
+                    <a href="/nesudmeadrzmepalce/"><img class="article__picture article__picture--secondary" src="/images/nesudmeadrzmepalce.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">Zamyšlení</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/nesudmeadrzmepalce/" class="link__href">Nesuďme a držme palce</a></h1>
+
+                    </div>       
+                </article>  
+    
+                <article class="article article--secondary">
+                    <a href="/nefnukameuzprilis/"><img class="article__picture article__picture--secondary" src="/images/nefnukameuzprilis.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">Zamyšlení</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/nefnukameuzprilis/" class="link__href">Nefňukáme už příliš?</a></h1>
+                    </div>
+                 </article>
+    
+    
+                 <article class="article article--secondary">
+                    <a href="/vylucovani/"><img class="article__picture article__picture--secondary" src="/images/vylucovani.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">Postřeh</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/vylucovani/" class="link__href">Vylučování. Vylučte mě, prosím</a></h1>
+                    </div>
+                </article>
+    
+                <article class="article article--secondary">
+                    <a href="/nikdonicnevi/"><img class="article__picture article__picture--secondary" src="/images/nikdonicnevi.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">Postřeh</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/nikdonicnevi/" class="link__href">Nikdo nic neví</a></h1>
+                    </div>
+                </article>
+        </div>
+    </div>
+</div>

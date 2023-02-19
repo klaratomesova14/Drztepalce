@@ -1,0 +1,165 @@
+---
+layout: article.njk
+title: Nefňukáme už příliš?
+tags: blog
+date: 2023-02-14
+category: Zamyšlení
+---
+
+<div class="primary">
+    <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a></p>
+    <article class="article article--primary">
+        <h3 class="article__category article__category--primary">Zamyšlení</h3>
+        <h1 class="article__title article__title--primary">Nefňukáme už příliš?</h1>
+        <h4 class="article__date article__date--primary">20. 1. 2023</h4>
+        <p class="article__perex">
+            Občas mě napadá, třeba jako dneska, kdy měla dcera několikrát záchvat, jaký skoro nepamatuju a se kterým už jsem skoro nepočítala, jestli je to vážně až tak moc hrozný, jak nám to připadá, anebo jenom příliš fňukáme.
+        </p>        
+
+        <img class="article__picture article__picture--primary" src="/images/nefnukameuzprilis.jpg">
+
+        <p class="article__paragraph"> 
+            Vláčela jsem ji řvoucí uličkami obchodního centra ve snaze najít dětské kadeřnictví, do kterého jsme byli se synem objednaní. Rozkřičela se hnedka po odjezdu z domova, nevím proč. Neřekla mi to, protože nemluví. Nenechala se utišit, jenom vztekle řvala. Tak jsem šla. Vedla ji za ruku s klidnou tváří, i když uvnitř mi fajn nebylo. Překvapilo mě, kolik lidí v celkem rušném prostředí koukalo. Přišlo mi, že všichni. A tak jsem se v duchu litovala za to, že tohle musím pořád zažívat. Do toho se syn vytrvale ptal, jestli jdeme správně a co když to nestihneme. Když pak nastala očistná chvíle klidu, když byl syn stříhán a dcera usazena do křesla v podobě auta holdovala dětskému YouTube v mém telefonu, napadlo mě, jestli to s tím litováním trochu nepřeháním.
+        </p>
+
+
+        <p class="article__paragraph"> 
+            Přece jenom, nemáme srovnání. Nemáme další zdravé dítě, se kterým bychom mohli vývoj našich dvou dětí porovnávat a říkat si, že to bylo o tolik a tolik snažší. Vlastně tak naše děti neustále v myšlenkách srovnáváme s nějakým domnělým prototypem ideálního a bezproblémového dítěte, které jede v souladu s tabulkami, možná i nad nimi, spí dvanáct hodin denně, období vzdoru ho minulo a od narození poslouchá na slovo. Blbost. Možná, že kdybychom tu zkušenost měli, nebyli bychom tak často zdeptaní a ukřivdění z toho, o kolik to máme těžší.
+        </p>
+
+
+        <p class="article__quote">
+            „Vždycky jsem si myslela, že potřebuju lidem naši každodenní realitu dostatečně vylíčit, aby nás politovali a uznali, že to máme fakt těžký. Není tomu tak. Cítit se politováníhodná je o poznání horší než cítit se nedoceněná.”
+        </p>
+
+        <p class="article__paragraph"> 
+            Na druhou stranu občas dostaneme i trochu odlišný pohled na věc. Třeba když nám ve školce paní učitelka s dlouholetou praxí řekla, že takové dítě, jako je naše dcera, tam ještě neměli. A to je to prosím školka, která běžně začleňuje děti se speciálními potřebami v poměru asi jedna ku čtyřem. Nebo když jsem potkala známou se stejně starým dítětem, přesněji řečeno kamarádku, se kterou jsem se v rámci snahy o zachování zbytku duševního zdraví přestala postupně stýkat, když se naše dcera zhoršovala, zatímco ta její jenom kvetla. Když pak na mě při každé mojí druhé větě koukala s otevřenou pusou a šokovaným výrazem ve tváři, nešlo se ubránit pocitu, že je to ve skutečnosti možná ještě horší, než jsem myslela. Vždycky jsem si myslela, že potřebuju lidem naši každodenní realitu dostatečně vylíčit, aby nás politovali a uznali, že to máme fakt těžký. Není tomu tak. Cítit se politováníhodná je o poznání horší než cítit se nedoceněná. 
+        </p>
+
+        <p class="article__paragraph">
+            Takže já vlastně nevím, jestli fňukáme příliš. Při snaze o co nejobjektivnější zhodnocení naší rodičovské zkušenosti bych řekla, že ačkoli i ostatní děti se někdy vztekaj, neposlouchaj, zlobí, nespí a křičí, u autistických dětí to všechno trvá mnohem déle a dostáváme to v mnohem koncentrovanější formě. Po pravdě mám pocit, jako bych zažila čtyři mateřský a ne dvě. Děti nejde motivovat, nejde jim nic vysvětlit. A taky by se to určitě všechno zvládalo mnohem lépe, kdybychom měli od dítěte nějakou odezvu. Jenže i mazlení, roztomilé žvatlání, oslovování „tati, mami”, sdílení radostí, společná hra, všechno to, pro co si řeknete, že stojí za to být rodičem, je u autistických dětí v ranném věku velmi omezené.
+        </p>
+
+        <p class="article__paragraph">
+            Nakonec musím přiznat, že fňukám asi o něco víc, než je potřeba. Nebo spíš takhle - určitě víc, než je zdravé. Ale trocha toho fňukání mi přijde fér. Osvobozující.
+        </p>
+    
+    </article>  
+
+    <div class="comments">
+
+        <form method="post" class="comments__form">
+            <h3 class="comments__title">komentáře</h3>
+            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+            <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+            <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+        </form>
+        
+        <div id="comments"></div>
+        
+        </div>
+    
+        <script>
+            let articleId = 5
+        
+            let commentsDiv = document.getElementById('comments')
+            let sendCommentBtn = document.getElementById('send')
+            
+            async function loadComments() {
+                let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                try {
+                    let res = await fetch(url)
+                    let data = await res.json()
+        
+                    let html = '<div class="comments__list">'
+        
+        data.forEach(row => {
+            html += `<div class="comment">
+                        <h4 class="comment__name">${row.username}</h4>
+                        <p class="comment__date">${row.date}</p>
+                        <p class="comment__message">${row.comment}</p>
+                    </div>`       
+        })
+    
+        html += '</div>'
+    
+                    commentsDiv.innerHTML = html
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        
+            async function addComment() {
+                let username = document.getElementById('name').value
+                let email = document.getElementById('email').value
+                let comment = document.getElementById('text').value
+        
+                let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+        
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify([articleId, username, email, comment]),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'Success') {
+                        loadComments()
+                        comments.scrollIntoView()
+                    } 
+                })
+                .catch(error => console.log(error))
+            }
+            
+            window.addEventListener('load', loadComments)
+            sendCommentBtn.addEventListener('click', addComment)
+        </script>
+</div>
+
+
+<div class="complementary">
+    <div class="articles__suggestion">
+        <h2 class="title title--complementary">další příspěvky</h2>
+        <div class="articles--vertical">
+
+            <article class="article article--secondary">
+                <a href="/nesudmeadrzmepalce/"><img class="article__picture article__picture--secondary" src="/images/nesudmeadrzmepalce.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">Zamyšlení</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/nesudmeadrzmepalce/" class="link__href">Nesuďme a držme palce</a></h1>
+       
+                </div>       
+            </article>    
+
+            <article class="article article--secondary">
+                <a href="/tentokratoficialne/"><img class="article__picture article__picture--secondary" src="/images/tentokratoficialne.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">jak to bylo</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/tentokratoficialne/" class="link__href">Tentokrát oficiálně</a></h1>
+
+                </div>
+            </article>
+
+            <article class="article article--secondary">
+                <a href="/vylucovani/"><img class="article__picture article__picture--secondary" src="/images/vylucovani.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">Postřeh</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/vylucovani/" class="link__href">Vylučování. Vylučte mě, prosím</a></h1>
+
+                </div>
+            </article>
+
+            <article class="article article--secondary">
+                <a href="/nikdonicnevi/"><img class="article__picture article__picture--secondary" src="/images/nikdonicnevi.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">Postřeh</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/nikdonicnevi/" class="link__href">Nikdo nic neví</a></h1>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>

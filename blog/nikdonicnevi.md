@@ -1,0 +1,155 @@
+---
+layout: article.njk
+title: Nikdo nic neví
+tags: blog
+date: 2023-02-14
+category: Zamyšlení
+image: nekonecnamocspanku3.jpg
+---
+
+    <div class="primary">
+        <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a></p>
+        <article class="article article--primary">
+            <h3 class="article__category article__category--primary">postřeh</h3>
+            <h1 class="article__title article__title--primary">Nikdo nic neví</h1>
+            <h4 class="article__date article__date--primary">8. 12. 2022</h4>
+            <p class="article__perex">
+                Dneska ráno ve výtahu se mě soused při pohledu na mou dceru zeptal kolik let školky ještě zbývá než půjde do školy. Po cestě mi pak v hlavě vyskočilo promo na první řadu Zoufalých manželek: Kolik toho skutečně víme o lidech, co bydlí vedle nás?
+            </p>        
+
+            <img class="article__picture article__picture--primary" src="/images/{{ image }}">
+
+
+            <p class="article__paragraph">
+                Na patře bydlíme čtyři rodiny se dvěma dětmi. Bydlíme tak vedle sebe už 6 let, tak dlouho, jak je dům postaven. Za tu dobu jsme měli dvě větší setkání v bytě jednoho z nás, ostatní interakce se omezují na prohození pár vět na chodbě, při společném čekání na stejného kurýra nebo když se náhodou potkáme venku.
+            </p>
+
+            <p class="article__paragraph"> 
+                Pravda, to poslední pár hodinové setkání proběhlo před třemi roky. Neskutečný. Samotnou mě to udivuje, když to teď počítám. Každopádně, to bylo dceři 6 měsíců a to, že se o rok později začne ve vývoji posouvat nazpět, nás tenkrát vůbec nenapadlo. Syn, tou dobou pětiletý, špatně mluvil a byl poněkud hyperaktivní, jak je ostatně už od narození, ale jinak celkem v pohodě dítě, se kterým se dá téměř na všem domluvit. Asi je napadlo, že tam něco je, ale pochybuju, že jim hned na mysl vytanul autismus. Nemluvili jsme o tom. Děti byly s dětmi a dospělí se bavili o dospělejch věcech. 
+
+            </p>
+
+            <p class="article__paragraph">
+                S dcerkou v posledních třech letech tedy více do kontaktu nepřišli a je jasný, že nejsou jasnovidci, aby tušili, co se děje u nás doma, stejně tak jako my nemusíme vědět nic o jejich trápeních. I tak ve mě ale dotaz na to, kdy půjde dcera do školy zarezonoval - dcera, která chodí do školky na dvě hodiny, protože nemluví, nereaguje na jméno, není schopna se zapojit do jakékoli řízené činnosti, nejí nic, co by ve školce podávali a tedy ve výsledku si tam chodí jen na chvilku pohrát. Bude někdy schopna jít do běžné školy? Věříme, že ano. Ale zároveň to tak teď vůbec nevypadá. Nikdo nic neví. To je hláška mého manžela. Trefná.
+            </p>
+        
+        </article>    
+        <div class="comments">
+
+            <form method="post" class="comments__form">
+                <h3 class="comments__title">komentáře</h3>
+                <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+                <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+                <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+                <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+            </form>
+            
+            <div id="comments"></div>
+            
+            </div>
+        
+            <script>
+                let articleId = 2
+            
+                let commentsDiv = document.getElementById('comments')
+                let sendCommentBtn = document.getElementById('send')
+                
+                async function loadComments() {
+                    let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                    try {
+                        let res = await fetch(url)
+                        let data = await res.json()
+            
+                        let html = '<div class="comments__list">'
+            
+            data.forEach(row => {
+                html += `<div class="comment">
+                            <h4 class="comment__name">${row.username}</h4>
+                            <p class="comment__date">${row.date}</p>
+                            <p class="comment__message">${row.comment}</p>
+                        </div>`       
+            })
+        
+            html += '</div>'
+        
+                        commentsDiv.innerHTML = html
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }
+            
+                async function addComment() {
+                    let username = document.getElementById('name').value
+                    let email = document.getElementById('email').value
+                    let comment = document.getElementById('text').value
+            
+                    let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+            
+                    fetch(url, {
+                        method: 'POST',
+                        body: JSON.stringify([articleId, username, email, comment]),
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8',
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status == 'Success') {
+                            loadComments()
+                            comments.scrollIntoView()
+                        } 
+                    })
+                    .catch(error => console.log(error))
+                }
+                
+                window.addEventListener('load', loadComments)
+                sendCommentBtn.addEventListener('click', addComment)
+            </script>
+    </div>
+
+
+    <div class="complementary">
+        <div class="articles__suggestion">
+            <h2 class="title title--complementary">další příspěvky</h2>
+            <div class="articles--vertical">
+                <article class="article article--secondary">
+                    <a href="/nefnukameuzprilis/"><img class="article__picture article__picture--secondary" src="/images/nefnukameuzprilis.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">Zamyšlení</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/nefnukameuzprilis/" class="link__href">Nefňukáme už příliš?</a></h1>
+    
+                    </div>
+                 </article>
+    
+                <article class="article article--secondary">
+                    <a href="/nesudmeadrzmepalce/"><img class="article__picture article__picture--secondary" src="/images/nesudmeadrzmepalce.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">Zamyšlení</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/nesudmeadrzmepalce/" class="link__href">Nesuďme a držme palce</a></h1>
+       
+                    </div>       
+                </article>   
+    
+    
+                <article class="article article--secondary">
+                    <a href="/vylucovani/"><img class="article__picture article__picture--secondary" src="/images/vylucovani.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">Postřeh</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/vylucovani/" class="link__href">Vylučování. Vylučte mě, prosím</a></h1>
+
+                    </div>
+                </article>
+    
+    
+                <article class="article article--secondary">
+                    <a href="/tentokratoficialne/"><img class="article__picture article__picture--secondary" src="/images/tentokratoficialne.jpg"></a>
+                    <div class="article__text article__text--secondary">
+                        <h3 class="article__category article__category--secondary">jak to bylo</h3>
+                        <h1 class="article__title article__title--secondary"><a href="/tentokratoficialne/" class="link__href">Tentokrát oficiálně</a></h1>
+    
+                    </div>
+                </article>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,171 @@
+---
+layout: article.njk
+title: A teď už to půjde?
+tags: blog
+date: 2023-02-14
+category: Zamyšlení
+image: nekonecnamocspanku3.jpg
+---
+
+<div class="primary">
+    <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a></p>
+    <article class="article article--primary">
+        <h3 class="article__category article__category--primary">Zamyšlení</h3>
+        <h1 class="article__title article__title--primary">A teď už to půjde?</h1>
+        <h4 class="article__date article__date--primary">14. 2. 2023</h4>
+        <p class="article__perex">
+            Včera jsme se s dcerou učili hledat a ukazovat zvířátka v knížce. Poprvé jsem měla pocit, že jsme se někam hnuli - že se jí daří ukázat na správné zvíře namísto na jiné nebo jen tak někam do prostoru častěji, než by tomu chtěla náhoda. Samozřejmě s příslibem bonbonu, ale člověk je rád, když u toho dítě vůbec chvilku vydrží sedět. A ta sladkost se postupně odbourá. 
+        </p>        
+
+        <img class="article__picture article__picture--primary" src="/images/{{ image }}">
+
+        <p class="article__paragraph"> 
+            Nebylo to doopravdy poprvé. Pamatuji si, jak někdy v roce mi dcerka na požádání ukazovala třeba xylofon nebo vrtulník, zvířátka, věci, lidi... tohle trochu závidím rodičům dětí s běžným vývojem, tu radost, když se dítě učí nové věci a co víc, když se chce učit nové věci. Když se dívám na fotky z té doby, vidím tam spokojenou a naplněnou, byť trochu unavenou mámu. Tohle všechno se u nás ale postupně vytratilo někdy do dceřiného roku a tři čtvrtě. 
+        </p>
+
+        <p class="article__quote">
+            „Jako by se v určité fázi vždycky vývojově posunuli o kousíček dál a najednou byly schopny vnímat a rozumět, co se po nich chce a jak to vlastně funguje.”
+        </p>
+        
+        <p class="article__paragraph"> 
+            Přes všechny terapie, logopedie a rané péče, kterými jsme s dětmi prošli, jsem zpozorovala jednu věc. Moje děti - a tady bych opravdu nerada generalizovala na ostatní děti s PAS - jsou v období po prvních projevech autismu schopny učit se nové nebo již zapomenuté věci až v momentě, kdy jsou na učení těch věcí zralé. Jako by se v určité fázi vždycky vývojově posunuli o kousíček dál a najednou byly schopny vnímat a rozumět, co se po nich chce a jak to vlastně funguje. 
+        </p>
+
+
+        <p class="article__paragraph"> 
+            Celý rok jsme se se synem neúspěšně učili říkat R a až to jednou zkoušel sám v pokoji, najednou to uměl lusknutím prstu. Dceru jsme se snažili učit chodit na záchod od dvou let, ve třech letech jsem byla odhodlaná, že už se to prostě musí povést. Nechávala jsem ji na záchodě sedět i půl hodiny a prostě se nevyčůrala. Asi dvakrát vlastně jo, když předtím celý den nečůrala ani do plenky a pak už to po té půl hodině na záchodě zkrátka neudržela, ale bylo to vyčerpávající pro nás obě. Pak najednou blik a šlo to. Pořád u toho často nadává, protože to zkrátka nedělá ráda, ale když se jí chce, tak ví, jak na to.
+        </p>
+
+
+
+        <p class="article__paragraph">
+            Stejně tak s obouváním bačkorek, s používáním lžičky, s malováním pastelkami v posledním týdnu - to všechno se začalo alespoň částečně dařit, až když přišel pravý čas a kdybych tisíckrát chtěla, dříve bych ji k tomu přimět nedokázala. Ani tak není vůbec snadný dcerku něco naučit - vidím, jak ji vždycky hrozně namáhá se soustředit, jak utíká pohledem někam dovnitř ve snaze si odpočinout. A já se ji zas a znovu snažím přimět, aby vnímala a dívala se, kam je potřeba. 
+        </p>
+
+        <p class="article__paragraph">
+            Syn si osvojil takovou milou, i když občas možná trochu alibistickou větu: „Na to ještě nejsem připravenej.” A podle toho jednám. Nechci stresovat sebe nebo děti tím, že je budu tlačit do něčeho, na co ještě připraveny nejsou, obzvlášť když zkušenosti praví, že výsledkem bude prohra. Když ale jen trochu vytuším, že je šance je přesvědčit a posunout dál, jsem přísná.
+        </p>
+
+        <p class="article__paragraph">A pak jsem taky patřičně pyšná na to, co jsme spolu dokázali.</p>
+    
+    </article>    
+
+    <div class="comments">
+
+        <form method="post" class="comments__form">
+            <h3 class="comments__title">komentáře</h3>
+            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+            <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+            <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+        </form>
+        
+        <div id="comments"></div>
+        
+        </div>
+    
+        <script>
+            let articleId = 7
+        
+            let commentsDiv = document.getElementById('comments')
+            let sendCommentBtn = document.getElementById('send')
+            
+            async function loadComments() {
+                let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                try {
+                    let res = await fetch(url)
+                    let data = await res.json()
+        
+                    let html = '<div class="comments__list">'
+        
+        data.forEach(row => {
+            html += `<div class="comment">
+                        <h4 class="comment__name">${row.username}</h4>
+                        <p class="comment__date">${row.date}</p>
+                        <p class="comment__message">${row.comment}</p>
+                    </div>`       
+        })
+    
+        html += '</div>'
+    
+                    commentsDiv.innerHTML = html
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        
+            async function addComment() {
+                let username = document.getElementById('name').value
+                let email = document.getElementById('email').value
+                let comment = document.getElementById('text').value
+        
+                let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+        
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify([articleId, username, email, comment]),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'Success') {
+                        loadComments()
+                        comments.scrollIntoView()
+                    } 
+                })
+                .catch(error => console.log(error))
+            }
+            
+            window.addEventListener('load', loadComments)
+            sendCommentBtn.addEventListener('click', addComment)
+        </script>
+</div>
+
+
+
+<div class="complementary">
+    <div class="articles__suggestion">
+        <h2 class="title title--complementary">další příspěvky</h2>
+        <div class="articles--vertical">
+
+            <article class="article article--secondary">
+                <a href="/nefnukameuzprilis/"><img class="article__picture article__picture--secondary" src="/images/nefnukameuzprilis.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">zamyšlení</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/nefnukameuzprilis/" class="link__href">Nefňukáme už příliš?</a></h1>
+                </div>
+            </article>
+
+            <article class="article article--secondary">
+                <a href="/nekonecnamocspanku/"><img class="article__picture article__picture--secondary" src="/images/nekonecnamocspanku3.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">jak to bylo</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/nekonecnamocspanku/" class="link__href">Nekonečná moc spánku</a></h1>
+                </div>
+            </article>
+            
+            <article class="article article--secondary">
+                <a href="/nesudmeadrzmepalce/"><img class="article__picture article__picture--secondary" src="/images/nesudmeadrzmepalce.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">Zamyšlení</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/nesudmeadrzmepalce/" class="link__href">Nesuďme a držme palce</a></h1>
+       
+                </div>       
+            </article>    
+
+            <article class="article article--secondary">
+                <a href="/tentokratoficialne/"><img class="article__picture article__picture--secondary" src="/images/tentokratoficialne.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">jak to bylo</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/tentokratoficialne/" class="link__href">Tentokrát oficiálně</a></h1>
+
+                </div>
+            </article>
+
+
+    </div>
+
+</div>
+</div>
