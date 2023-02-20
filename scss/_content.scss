@@ -53,11 +53,12 @@
 
   font-family: fonts.$serif;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 400;
   margin: 8px 0;
 
   @include desktop {
     text-align: center;
+    font-weight: 300;
   }
 
   &--primary {

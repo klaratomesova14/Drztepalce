@@ -190,12 +190,13 @@ body {
 .article__title {
   font-family: "Roboto Serif", serif;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 400;
   margin: 8px 0;
 }
 @media screen and (min-width: 1024px) {
   .article__title {
     text-align: center;
+    font-weight: 300;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -618,8 +619,19 @@ body {
   grid-column: -1/1;
   background-color: #353434;
   color: white;
-  padding: 100px 7%;
+  padding: 60px 7%;
+  margin-top: 40px;
 }
+
+@media screen and (min-width: 1024px) {
+  .footer {
+  padding: 100px 7%;
+  margin-top: 0;
+}
+}
+
+
+
 @media screen and (min-width: 1024px) {
   .footer__wrapper {
     display: flex;
