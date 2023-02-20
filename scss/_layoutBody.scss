@@ -21,7 +21,7 @@ body {
 .layout {
     display: grid;
     grid-template-columns: 15px auto 15px;
-    grid-template-rows: 10px auto auto auto;
+    grid-template-rows: 5px auto auto auto;
     background-color: #fafafa;
 
   @include desktop {
