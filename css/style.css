@@ -17,7 +17,7 @@ body {
 @media screen and (min-width: 1024px) {
   .layout {
     grid-template-columns: auto 86% auto;
-    grid-template-rows: 25px auto auto auto;
+    grid-template-rows: 15px auto auto auto;
   }
 }
 
