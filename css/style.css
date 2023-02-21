@@ -206,7 +206,6 @@ body {
 }
 .article__title--secondary {
   font-size: 20px;
-  transform: translateZ(0.1px);
   margin: 4px 0;
 }
 
