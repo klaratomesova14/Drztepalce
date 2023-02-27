@@ -151,9 +151,22 @@ body {
   grid-row: 3/4;
   grid-column: 2/3;
   margin-top: 20px;
+  padding-bottom: 50px;
   display: grid;
   gap: 50px;
+  position: relative;
 }
+
+.content::after {
+    position: absolute;
+    content: "";
+    height: 1.5px;
+    background-color: rgba(190, 189, 189, 0.7215686275);
+    bottom: 0;
+    width: 90%;
+    left: 5%;
+}
+
 @media screen and (min-width: 1024px) {
   .content {
     grid-template-columns: 3fr 1.1fr;
@@ -569,6 +582,11 @@ body {
   height: 40px;
   margin: 0;
 }
+
+.news__circle2 {
+  background-color: #83adb3a0;
+}
+
 .news__text {
   font-size: 13px;
   line-height: 1.5;
@@ -705,3 +723,21 @@ body {
     margin-bottom: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
+
+.filter {
+  margin: 20px 0;
+  padding: 25px 20px 20px 20px;
+  border: 1px solid #e4c7c7;
+  position: relative;
+}
+
+.filter::before {
+      content: "FILTR";
+      color: #e4c7c7;
+      font-family: "Roboto Serif", serif;
+      font-size: 12px;
+      font-weight: 400;
+      background-color: white;
+      position: absolute;
+      top: -7px;
+  }

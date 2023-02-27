@@ -11,13 +11,13 @@ body {
 .layout {
   display: grid;
   grid-template-columns: 15px auto 15px;
-  grid-template-rows: 10px auto auto auto;
+  grid-template-rows: 5px auto auto auto;
   background-color: #fafafa;
 }
 @media screen and (min-width: 1024px) {
   .layout {
     grid-template-columns: auto 86% auto;
-    grid-template-rows: 25px auto auto auto;
+    grid-template-rows: 15px auto auto auto;
   }
 }
 
@@ -108,7 +108,7 @@ body {
 .logo {
   grid-row: 1/2;
   grid-column: 2/3;
-  margin: 20px 0;
+  margin: 30px 0 20px 0;
 }
 @media screen and (min-width: 1024px) {
   .logo {
@@ -151,8 +151,10 @@ body {
   grid-row: 3/4;
   grid-column: 2/3;
   margin-top: 20px;
+  padding-bottom: 50px;
   display: grid;
   gap: 50px;
+  position: relative;
 }
 @media screen and (min-width: 1024px) {
   .content {
@@ -161,6 +163,15 @@ body {
     gap: 60px 90px;
     margin: 40px 0 80px 0;
   }
+}
+.content::after {
+  position: absolute;
+  content: "";
+  height: 1.5px;
+  background-color: rgba(190, 189, 189, 0.7215686275);
+  bottom: 0;
+  width: 90%;
+  left: 5%;
 }
 
 .article__text {
@@ -190,12 +201,13 @@ body {
 .article__title {
   font-family: "Roboto Serif", serif;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 400;
   margin: 8px 0;
 }
 @media screen and (min-width: 1024px) {
   .article__title {
     text-align: center;
+    font-weight: 300;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -604,7 +616,14 @@ body {
   grid-column: -1/1;
   background-color: #353434;
   color: white;
-  padding: 100px 7%;
+  padding: 60px 7%;
+  margin-top: 40px;
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    padding: 100px 7%;
+    margin-top: 0;
+  }
 }
 @media screen and (min-width: 1024px) {
   .footer__wrapper {
@@ -656,8 +675,9 @@ body {
     margin: 15px 0;
   }
 }
-.footer__href {
+.footer__link {
   color: white;
+  text-decoration: none;
 }
 .footer__logo {
   width: 70%;
