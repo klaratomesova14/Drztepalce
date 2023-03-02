@@ -8,6 +8,13 @@
   }
 }
 
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+      @content;
+  }
+}
+
+
 .complementary {
     font-family: fonts.$sans;
 
@@ -43,6 +50,13 @@
         font-size: 14px;
         line-height: 1.5;
 
+        @include tablet {
+          margin: 0 50px;
+        }
+
+        @include desktop {
+          margin: 0;
+        }
     }
   }
   
@@ -56,6 +70,16 @@
       margin-bottom: 15px;
       gap: 10px;
       align-items: center;
+
+      @include tablet {
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+
+      @include desktop {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
     &__circle {
@@ -92,32 +116,50 @@
     position: relative;
     margin: 0 auto;
 
-&__picture {
-    width: 100%;
-}
+  &__picture {
+      width: 100%;
+  }
 
-&__button {
-    position: absolute;
-    bottom: 7%;
-    right: 12%;
-    font-size: 15px;
-    background-color: colors.$complementary-darker;
-    color: white;
-    font-weight: 500;
-    padding: 12px 26px;
-    border: none;
-    border-radius: 5px;
+  &__button {
+      position: absolute;
+      bottom: 8%;
+      right: 12%;
+      font-size: 15px;
+      background-color: colors.$complementary-darker;
+      color: white;
+      font-weight: 500;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 5px;
 
-    &:hover {
-    background-color: colors.$complementary-darkest;
-    }
-}
+      &:hover {
+      background-color: colors.$complementary-darkest;
+      }
 
-&__text {
-    position: absolute;
-    bottom: 22%;
-    left: 10%;
-    color: colors.$primary;
-    font-weight: 400;
-}
+      @include tablet {
+        font-size: 18px;
+        bottom: 15%;
+      }
+
+      @include desktop {
+        font-size: 15px;
+        bottom: 8%;
+      }
+  }
+
+  &__text {
+      position: absolute;
+      bottom: 22%;
+      left: 10%;
+      color: colors.$primary;
+      font-weight: 400;
+  }
+
+  @include tablet {
+    margin: 50px;
+  }
+
+  @include desktop {
+    margin: 0 auto;
+  }
 }

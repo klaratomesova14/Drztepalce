@@ -8,6 +8,14 @@
   }
 }
 
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+      @content;
+  }
+}
+
+
+
 .content {
   grid-row: 3/4;
   grid-column: 2/3;
@@ -17,6 +25,10 @@
   gap: 50px;
   position: relative;
 
+  @include tablet {
+    margin-top: 30px;
+  }
+
     @include desktop {
     grid-template-columns: 3fr 1.1fr;
     grid-template-rows: auto auto;
@@ -24,6 +36,7 @@
     margin: 40px 0 80px 0;
   }
 
+  /*
   &::after {
     position: absolute;
     content: "";
@@ -33,6 +46,7 @@
     width: 90%;
     left: 5%;
   }
+  */
 }
 
 .article__text {
@@ -114,13 +128,6 @@
   }
 }
 
-.articles--vertical .article--secondary .article__picture--secondary {
-  @include desktop {
-    height: 200px;
-  }
-}
-
-
 .link {
   text-align: center;
   font-size: 15px;
@@ -164,9 +171,13 @@
     color: colors.$primary
   }
 
+  @include tablet {
+    margin: 40px 60px;
+  }
+
   @include desktop {
-    margin: 50px 90px;
     font-size: 18px;
+    margin: 50px 90px;
   }
 }
 
@@ -262,7 +273,7 @@
 .filter {
   margin: 20px 0;
   padding: 25px 20px 20px 20px;
-  border: 1px solid color.$complementary;
+  border: 1px solid colors.$complementary;
   position: relative;
 
   &::before {

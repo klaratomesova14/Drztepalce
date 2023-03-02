@@ -8,6 +8,11 @@
   }
 }
 
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+  }
 
 
 .primary {
@@ -41,6 +46,10 @@
         height: 250px;
         object-fit: cover;
         margin: 20px 0;
+
+        @include tablet {
+            height: 380px;
+            }   
   
         @include desktop {
         height: 450px;

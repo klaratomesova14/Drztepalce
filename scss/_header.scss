@@ -8,12 +8,23 @@
     }
 }
 
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+  }
+
 .header {
     grid-row: 2 / 3;
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 5px auto;
     grid-template-rows: auto 250px;
+
+    @include tablet {
+        grid-template-rows: auto 360px;
+
+    }
 
     @include desktop {
         grid-template-rows: auto 560px;
@@ -104,13 +115,18 @@
     }
 
     &__image {
-        @include desktop {
+        @include tablet {
         display: none
         }
     }
 
     &__image--bigger {
         display: none;
+
+        @include tablet {
+            display: block;
+            margin-left: 20px;
+        }
 
         @include desktop {
             display: block;
