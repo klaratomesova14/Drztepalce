@@ -1,0 +1,162 @@
+---
+layout: template.njk
+title: Omáčka a toasty
+---
+
+<div class="primary">
+    <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a></p>
+    <article class="article article--primary">
+        <h3 class="article__category article__category--primary">jak to bylo</h3>
+        <h1 class="article__title article__title--primary">Omáčka a toasty</h1>
+        <h4 class="article__date article__date--primary">13. 3. 2023</h4>
+
+        <img class="article__picture article__picture--primary" src="/images/omackaatoasty2.jpg">        
+        
+        <p class="article__paragraph">
+            Jelikož dcera v posledních týdnech dotáhla svoji averzi k zdravému nebo alespoň ne zcela nezdravému jídlu do bodu, kterej už není dlouhodobě únosnej, myslím že nastal čas na příspěvek o jídle.
+        </p>  
+
+        <p class="article__paragraph"> 
+            A jak že to u nás teďka vypadá? Tak třeba zeleninu, tu dcera nesnědla už aspoň rok. Jakože vážně. Rok. V posledním roce neprošla žádná syrová zelenina, mražená třeba přeměněná na rizoto, ani žádná vařená, která by byla vidět. Jediná zelenina, co mě napadá je ta ve slavné kupované boloňské omáčce. 
+        </p>
+
+
+        <p class="article__paragraph"> 
+            Proč slavné? Protože je to aktuálně jediný vařený jídlo, který je dcera ochotna dobrovolně sníst. Samozřejmě kromě mekáče. Už neprojdou ani takový základní a nekonfliktní jídla jako je kuře na paprice s rýží nebo pečený kuře s kaší. Brambory taky ne. I když teď jsem se rozhodla zařadit na jeden den v týdnu bramborové placky, těch pár sní. Je to spíš taková sváča, ale furt je to ve výsledku víc, než když plnohodnotný oběd ani neochutná. Zkouším všechny možný triky. Na terapii doporučovali pod skleničku na stole připravit čokoládu jako odměnu za dojedení. Nefunguje. Tenhle týden jsem pomocí kartiček slibovala telefon. Ani to ne. Zkouším ji nechat vyhladovět tím, že jí odmítám dát něco jiného, dokud si nedá trochu obědu. Ne. Zkouším být přísná až do podoby, která se mě samotné ani manželovi vůbec nelíbí ve snaze prolomit ten její truc a dojít toho, že jídlo ochutná a dojde jí, že je vlastně super. Nic. Pak mě suďte za to, že jí v restauraci rovnou objednávám řízek s hranolkama. Ani ten řízek nekončí vždycky úspěchem.
+        </p>
+
+
+        <p class="article__quote">
+            „Ano, opravdu své dítě musím nutit, aby jedlo slazenej jogurt s čokoládovýma křupinkama. To je sen každého rodiče.”
+        </p>
+
+        <p class="article__paragraph"> 
+            Z ovoce jí už jen borůvky, banán (do kterého dvakrát kousne) a maliny (které akceptuje jen občas, když hrajeme hru s malinami nasazenými na prstech). Pak jí teda ještě díky bohu vajíčka vařená i míchaná, z jogurtů dobrovolně jen monte a pribiňáček v kapsičce (což vlastně asi ani jogurty nejsou), s větším nátlakem pak fantasii s křupinkama. Ano, opravdu své dítě musím nutit, aby jedlo slazenej jogurt s čokoládovýma křupinkama. To je sen každého rodiče. Jenže v záplavě lepku ze všudypřítomných suchých toastů, kterýma by se malá ládovala od rána do večera, jsem vděčná za každou mokrou věc, co není voda. K večeři se většinou podaří toast s lučinou. Jiné podoby sýru bez šance.
+        </p>
+
+        <p class="article__paragraph">
+            No a pak tady máme snídaně, které se zvrtly v posledních dvou týdnech a to už teda lehce vyšiluju. Donedávna jsme jeli toast s marmeládou nebo nutellou, bábovku, perník, tvarohovej koláč, jednou týdně donut a o víkendu taky lívance nebo palačinky. Nic moc super zdravýho, ale dejme tomu celkem normální snídaně. Teďka už mi během školního týdne odmítá všechno kromě donutu. Z ničeho nic. Prostě jí tam zase něco přecvaklo. Ještě jako náhražku akceptuje mléčný řez nebo piškoty, ale z toho se moc nenají, že jo. Donut jí teda každopádně každej den dávat nebudu. Navíc pak ve školce jí zas jen suché toasty, které jí tam dokonce dobrovolně nosím, aby tam nebrečela hlady, když žádnou z podávaných svačin ani neochutná.
+        </p>
+
+        <p class="article__paragraph">
+            Jo a mimochodem, ta boloňská omáčka je nově akceptována jedině se špagetama, jakýkoli jiný donedávna bezproblémový druh těstovin už je taky pasé. Tak hlavně, že se pořád zlepšujeme. 
+        </p>
+    </article>
+
+    <div class="comments">
+
+        <form method="post" class="comments__form">
+            <h3 class="comments__title">komentáře</h3>
+            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+            <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+            <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+        </form>
+        
+        <div id="comments"></div>
+        
+        </div>
+    
+        <script>
+            let articleId = 12
+        
+            let commentsDiv = document.getElementById('comments')
+            let sendCommentBtn = document.getElementById('send')
+            
+            async function loadComments() {
+                let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                try {
+                    let res = await fetch(url)
+                    let data = await res.json()
+        
+                    let html = '<div class="comments__list">'
+        
+        data.forEach(row => {
+            html += `<div class="comment">
+                        <h4 class="comment__name">${row.username}</h4>
+                        <p class="comment__date">${row.date}</p>
+                        <p class="comment__message">${row.comment}</p>
+                    </div>`       
+        })
+    
+        html += '</div>'
+    
+                    commentsDiv.innerHTML = html
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        
+            async function addComment() {
+                let username = document.getElementById('name').value
+                let email = document.getElementById('email').value
+                let comment = document.getElementById('text').value
+        
+                let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+        
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify([articleId, username, email, comment]),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'Success') {
+                        loadComments()
+                        comments.scrollIntoView()
+                    } 
+                })
+                .catch(error => console.log(error))
+            }
+            
+            window.addEventListener('load', loadComments)
+            sendCommentBtn.addEventListener('click', addComment)
+        </script>
+</div>
+
+
+
+<div class="complementary">
+    <div class="articles__suggestion">
+        <h2 class="title title--complementary">další příspěvky</h2>
+        <div class="articles--vertical">
+
+
+            <article class="article article--secondary">
+                <a href="/casprozrit/"><img class="article__picture article__picture--secondary" src="/images/casprozrit.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">zamyšlení</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/casprozrit/" class="link__href">Čas prozřít</a></h1>
+        
+                </div>
+            </article> 
+
+            <article class="article article--secondary">
+                <a href="/jentakmimochodem/"><img class="article__picture article__picture--secondary" src="/images/jentakmimochodem2.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">postřeh</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/jentakmimochodem/" class="link__href">Jen tak mimochodem</a></h1>
+                </div>
+            </article>  
+
+            <article class="article article--secondary">
+                <a href="/tojakovazne/"><img class="article__picture article__picture--secondary" src="/images/tojakovazne.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">postřeh</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/tojakovazne/" class="link__href">To jako vážně?</a></h1>
+                </div>
+            </article>
+
+            <article class="article article--secondary">
+                <a href="/zastakspatnajsemnebyla/"><img class="article__picture article__picture--secondary" src="/images/zastakspatnajsemnebyla4.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">zamyšlení</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/zastakspatnajsemnebyla/" class="link__href">Zas tak špatná jsem nebyla</a></h1>
+                </div>
+            </article>
+    </div>
+
+</div>
+</div>
