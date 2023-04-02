@@ -1,0 +1,157 @@
+---
+layout: template.njk
+title: Balanc
+---
+
+<div class="primary">
+    <p class="link article__link"><a class="link__href link__href--dark" href="/"><i class="arrow arrow--left"></i>zpět</a></p>
+    <article class="article article--primary">
+        <h3 class="article__category article__category--primary">Zamyšlení</h3>
+        <h1 class="article__title article__title--primary">Balanc</h1>
+        <h4 class="article__date article__date--primary">2. 4. 2023</h4>
+
+        <img class="article__picture article__picture--primary" src="/images/balanc2.jpg">        
+        
+        <p class="article__paragraph">
+            V poslední době se v naší rodině často objevuje slovo balanc, nebo taky rovnováha a hranice. V podstatě jde o neustálé hledání toho správného balancu mezi naším nekonečným pochopením pro speciální potřeby našich dětí a zároveň snahou připravit je na to, že ostatní takové pochopení mít pravděpodobně nebudou.
+        </p>  
+
+        <p class="article__quote">
+            „Není jednoduchý v takový situaci děti vychovávat a získávat si jejich respekt. Chcete, aby se doma cítily v bezpečí a bezmezně milovány.”
+        </p>
+
+        <p class="article__paragraph"> 
+            Naše děti jsou obecně strašně citlivé a jako rodiče to samozřejmě vnímáme nejsilněji. Vím, jak bytostně důležité jsou pro ně naše láska a přijetí a zároveň jak silně reagují na jakékoli naše negativní projevy. Jak i sebemenší výtka synovi vhání do očí slzy a na jazyk slova o tom, že je špatnej nebo dokonce hnusnej. Jak vyčítavě, nechápavě a možná i raněně se na mě dívá dcera, když na ni zvýším hlas nebo přísně trvám na tom, že mi musí vyhovět. Není jednoduchý v takový situaci děti vychovávat a získávat si jejich respekt. Chcete, aby se doma cítily v bezpečí a bezmezně milovány.
+        </p>
+
+
+        <p class="article__paragraph"> 
+            Na třídních schůzkách mi paní asistentka popisovala, jak synovi vycházejí vstříc, respektují jeho odlišnost a dělají vše proto, aby byl ve škole spokojenej. Moc si toho vážíme. Mít tak skvělou paní učitelku a paní asistentku, jako má náš syn, určitě není samozřejmý. Na druhou stranu si myslím a snažila jsem se to i v našem rozhovoru navrhnout, že je zapotřebí ty jeho hranice taky trochu posouvat. Nemůžu mu přece odkývat vše, co říká, i když to není pravda, jen proto, že ho zpochybňování jeho ultimátní pravdy silně rozrušuje. Nemůžu mu říct, že je v úplném pořádku, že v jednom kuse žaluje na spolužáky, protože takhle mu moc kamarádů nezbyde. A nemůžu mu ani dovolit zarputile trvat na tom, že nebude zkoušet věci, ze kterých má strach, protože by nikdy nepřišel na to, že dokáže strachu čelit a postavit se tak i dalším výzvám.
+        </p>
+
+        <p class="article__paragraph"> 
+            Před pár týdny jsme se na tohle téma bavily taky s dceřinnou psycholožkou - o tom, jak na dceru někdy tlačím, protože vím, že je v jejích silách se s danou věcí vypořádat, namísto toho, abych přijala jako fakt, že autistické děti tato omezení mají. Chválila nás za náš přístup a to mě hodně povzbudilo k tomu si za ním nadále stát, i když je často z různých stran zpochybňován. Ráda se o našich dětech radím s lidmi, kteří se nespecializují jen na autismus. Vnímají odlišnost a omezení dětí s PAS ve větším kontextu.     
+        </p>
+
+        <p class="article__paragraph">
+            Když jsem poprvé kontaktovala synovu speciální pedagožku v době, když jsme autismus ještě neměli potvrzený, řekla mi, že nehledě na to, jakou diagnózu nakonec dostaneme, podstatný je snažit se dítě přiblížit co nejblíž normálu. Proto si i z dceřinných terapií bereme jen to, co nám připadá smysluplný a některý specificky autistický postupy doma neaplikujeme. Nechci, aby naše děti žily v autistickém světě podle autistických pravidel a svět se jim zmenšil na to, co jsou samy dobrovolně schopny zvládnout a akceptovat. Přála bych si, aby měly šanci vměstnat své malé autistické světy do světa skutečného. 
+        </p>
+    </article>
+
+    <div class="comments">
+
+        <form method="post" class="comments__form">
+            <h3 class="comments__title">komentáře</h3>
+            <textarea class="comments__text comments__field" name="text" id="text" placeholder="napiš komentář..." required></textarea>  
+            <input class="comments__name comments__field" type="text" name="name" id="name" placeholder="jméno *" required>
+            <input class="comments__email comments__field" type="email" name="email" id="email" placeholder="e-mail * (nebude se zobrazovat)" required>
+            <input class="comments__button" type="button" name="send" id="send" value="Odeslat">
+        </form>
+        
+        <div id="comments"></div>
+        
+        </div>
+    
+        <script>
+            let articleId = 13
+        
+            let commentsDiv = document.getElementById('comments')
+            let sendCommentBtn = document.getElementById('send')
+            
+            async function loadComments() {
+                let url = 'https://krystoftomes.cz/api/getComments.php?articleId=' + articleId
+                try {
+                    let res = await fetch(url)
+                    let data = await res.json()
+        
+                    let html = '<div class="comments__list">'
+        
+        data.forEach(row => {
+            html += `<div class="comment">
+                        <h4 class="comment__name">${row.username}</h4>
+                        <p class="comment__date">${row.date}</p>
+                        <p class="comment__message">${row.comment}</p>
+                    </div>`       
+        })
+    
+        html += '</div>'
+    
+                    commentsDiv.innerHTML = html
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+        
+            async function addComment() {
+                let username = document.getElementById('name').value
+                let email = document.getElementById('email').value
+                let comment = document.getElementById('text').value
+        
+                let url = 'https://krystoftomes.cz/api/addComment.php?articleId=' + articleId
+        
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify([articleId, username, email, comment]),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status == 'Success') {
+                        loadComments()
+                        comments.scrollIntoView()
+                    } 
+                })
+                .catch(error => console.log(error))
+            }
+            
+            window.addEventListener('load', loadComments)
+            sendCommentBtn.addEventListener('click', addComment)
+        </script>
+</div>
+
+
+
+<div class="complementary">
+    <div class="articles__suggestion">
+        <h2 class="title title--complementary">další příspěvky</h2>
+        <div class="articles--vertical">
+
+            <article class="article article--secondary">
+                <a href="/omackaatoasty/"><img class="article__picture article__picture--secondary" src="/images/omackaatoasty2.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">jak to bylo</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/omackaatoasty/" class="link__href">Omáčka a toasty</a></h1>
+                </div>
+            </article>
+            
+            <article class="article article--secondary">
+                <a href="/casprozrit/"><img class="article__picture article__picture--secondary" src="/images/casprozrit.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">zamyšlení</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/casprozrit/" class="link__href">Čas prozřít</a></h1>
+        
+                </div>
+            </article> 
+
+            <article class="article article--secondary">
+                <a href="/jentakmimochodem/"><img class="article__picture article__picture--secondary" src="/images/jentakmimochodem2.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">postřeh</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/jentakmimochodem/" class="link__href">Jen tak mimochodem</a></h1>
+                </div>
+            </article>  
+
+            <article class="article article--secondary">
+                <a href="/tojakovazne/"><img class="article__picture article__picture--secondary" src="/images/tojakovazne.jpg"></a>
+                <div class="article__text article__text--secondary">
+                    <h3 class="article__category article__category--secondary">postřeh</h3>
+                    <h1 class="article__title article__title--secondary"><a href="/tojakovazne/" class="link__href">To jako vážně?</a></h1>
+                </div>
+            </article>
+
+    </div>
+
+</div>
+</div>
