@@ -115,13 +115,8 @@
     }
 
     &__image {
-        @include tablet {
-        display: none
-        }
-    }
 
-    &__image--bigger {
-        display: none;
+        width: 220px;
 
         @include tablet {
             display: block;
@@ -129,8 +124,10 @@
         }
 
         @include desktop {
+            width: 250px;
             display: block;
-            margin-left: 60px;
+            margin-right: 10px;
+            margin-bottom: -10px;
         }
     }
 }
